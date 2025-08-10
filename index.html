@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restu Nugroho - Data Scientist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,1013 +13,958 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
+            color: #232f3e;
+            background-color: #f9f9f9;
+            font-size: 14px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 20px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            padding: 0 16px;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
+        /* Header Section */
+        .header {
+            background: #232f3e;
             color: white;
-            margin-top: -20px;
-            margin-left: -20px;
-            margin-right: -20px;
-            position: relative;
-            overflow: hidden;
+            padding: 40px 0;
+            margin-bottom: 32px;
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.3;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .subtitle {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 15px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .outline-section {
-            margin: 50px 0;
-            padding: 40px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            border-left: 6px solid #667eea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .outline-section h2 {
-            color: #1e3c72;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
+        .header-content {
             text-align: center;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .project-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            border-top: 5px solid #667eea;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .project-card:hover::before {
-            left: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #1e3c72;
-            margin-bottom: 15px;
-            text-decoration: none;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .project-title:hover {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        .project-category {
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .header h1 {
+            font-size: 32px;
             font-weight: 600;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
-        }
-
-        .tech-badge {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .impact-metric {
-            background: #e8f5e8;
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-            border-left: 4px solid #4caf50;
-            display: none;
-        }
-
-        .impact-number {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #2e7d32;
-            display: none;
-        }
-
-        .impact-text {
-            font-size: 0.9rem;
-            color: #666;
-            display: none;
-        }
-
-        .project-links {
-            margin-top: 20px;
-            display: none;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn-success {
-            background: #28a745;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .details-section {
-            margin: 60px 0;
-        }
-
-        .project-detail {
-            background: white;
-            margin: 40px 0;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e9ecef;
-        }
-
-        .project-detail h3 {
-            color: #1e3c72;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 15px;
-            position: relative;
-        }
-
-        .project-meta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 12px;
-        }
-
-        .meta-item {
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .meta-label {
-            font-weight: 700;
-            color: #495057;
-            display: block;
             margin-bottom: 8px;
-            font-size: 0.9rem;
+            color: #ffffff;
         }
 
-        .meta-value {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 1.1rem;
+        .header h1 .highlight {
+            color: #ff9900;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: #aab7b8;
+            margin-bottom: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-badges {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            border-bottom: 1px solid #e9ecef;
+            padding: 16px 0;
+            margin-bottom: 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-item {
+            color: #232f3e;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: #ff9900;
+            border-bottom-color: #ff9900;
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            margin-bottom: 24px;
         }
 
         .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1e3c72;
-            margin: 25px 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #232f3e;
+            margin-bottom: 8px;
         }
 
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
+        .section-subtitle {
+            font-size: 16px;
+            color: #5a6c7d;
+            font-weight: 400;
         }
 
-        .feature-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #e9ecef;
-            position: relative;
-            padding-left: 35px;
-            font-size: 1.05rem;
-        }
-
-        .feature-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #28a745;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .results-grid {
+        /* AWS-style Cards */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
-            margin: 20px 0;
         }
 
-        .result-card {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 5px solid #4caf50;
-            text-align: center;
+        .card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s ease;
+            position: relative;
         }
 
-        .result-number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #2e7d32;
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #ff9900;
+        }
+
+        .card-category {
+            background: #f2f3f3;
+            color: #5a6c7d;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #232f3e;
+            margin-bottom: 12px;
+            text-decoration: none;
             display: block;
         }
 
-        .result-text {
-            font-size: 0.95rem;
-            color: #555;
-            margin-top: 5px;
+        .card-title:hover {
+            color: #ff9900;
+            text-decoration: none;
         }
 
-        .publication-section {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
-            border-left: 6px solid #ff9800;
+        .card-description {
+            color: #5a6c7d;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 16px;
         }
 
-        .publication-title {
-            color: #e65100;
-            font-size: 1.8rem;
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tech-tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            border: 1px solid #e9ecef;
+        }
+
+        .card-metrics {
+            border-top: 1px solid #e9ecef;
+            padding-top: 16px;
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 16px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 15px;
+            color: #27ae60;
+            display: block;
         }
 
-        .publication-venue {
-            background: #ff9800;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+        .metric-label {
+            font-size: 11px;
+            color: #5a6c7d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Publication Card */
+        .publication-card {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+            border: 1px solid #ffa500;
+        }
+
+        .publication-icon {
+            display: none;
+        }
+
+        /* Detailed Project Section */
+        .project-detail {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .project-detail-header {
+            background: #f8f9fa;
+            padding: 24px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .project-detail-title {
+            font-size: 24px;
             font-weight: 600;
-            display: inline-block;
-            margin: 10px 0;
+            color: #232f3e;
+            margin-bottom: 8px;
         }
 
-        .skills-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 40px;
-            border-radius: 15px;
-            margin: 50px 0;
+        .project-detail-content {
+            padding: 24px;
         }
 
+        .detail-section {
+            margin-bottom: 32px;
+        }
+
+        .detail-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #232f3e;
+            margin-bottom: 12px;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f8f9fa;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .detail-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff9900;
+            font-weight: bold;
+        }
+
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .result-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .result-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #27ae60;
+            display: block;
+        }
+
+        .result-label {
+            font-size: 12px;
+            color: #5a6c7d;
+            margin-top: 4px;
+        }
+
+        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 20px;
         }
 
-        .skill-category {
+        .skill-card {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 24px;
         }
 
-        .skill-category h4 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            font-weight: 700;
+        .skill-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #232f3e;
+            margin-bottom: 16px;
         }
 
-        .skill-badges {
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .skill-badge {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+        .skill-tag {
+            background: #e8f4fd;
+            color: #0073bb;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
             font-weight: 500;
+            border: 1px solid #b3d8f0;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 40px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #ff9900;
             color: white;
-            border-radius: 15px;
+            border-color: #ff9900;
         }
 
-        .contact-info {
+        .btn-primary:hover {
+            background: #e88b00;
+            border-color: #e88b00;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #232f3e;
+            border-color: #e9ecef;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+            border-color: #dee2e6;
+        }
+
+        .btn-link {
+            background: none;
+            color: #0073bb;
+            border: none;
+            padding: 0;
+            text-decoration: underline;
+        }
+
+        .btn-link:hover {
+            color: #005a94;
+        }
+
+        /* Footer */
+        .footer {
+            background: #232f3e;
+            color: white;
+            padding: 48px 0;
+            margin-top: 64px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .contact-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 25px;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
-        .contact-item {
-            color: white;
+        .contact-link {
+            color: #aab7b8;
             text-decoration: none;
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            transition: all 0.2s ease;
         }
 
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
+        .contact-link:hover {
+            color: white;
+            border-color: #ff9900;
+            background: rgba(255, 153, 0, 0.1);
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
             .container {
-                margin: 10px;
-                padding: 15px;
+                padding: 0 12px;
             }
             
-            .projects-grid {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header .subtitle {
+                font-size: 16px;
+            }
+            
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
             
-            .project-meta {
-                grid-template-columns: 1fr;
+            .nav-content {
+                flex-direction: column;
+                gap: 16px;
             }
             
-            .contact-info {
+            .contact-links {
                 flex-direction: column;
                 align-items: center;
             }
         }
 
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(102, 126, 234, 0.3);
-            z-index: 1000;
+        /* Smooth animations */
+        .card,
+        .project-detail {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        .scroll-progress {
-            height: 100%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            width: 0%;
-            transition: width 0.1s ease;
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #0d1b2a, #1b263b);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #ffcc00; /* highlight nama */
-        }
-
-        .hero .subtitle {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        .hero .highlight {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 30px;
-            display: inline-block;
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
+        /* Stagger animation delays */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
     </style>
-    
 </head>
 <body>
-    <div class="scroll-indicator">
-        <div class="scroll-progress" id="scrollProgress"></div>
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Hello, I'm <span class="highlight">Restu Nugroho</span></h1>
+                <p class="subtitle">
+                    A Data Scientist passionate about turning data into actionable insights and measurable business value. 
+                    Hands-on experience in data analytics, forecasting, machine learning, and operations optimization, 
+                    with a proven record of building scalable data pipelines, predictive models, and deploying end-to-end ML solutions.
+                </p>
+                <div class="header-badges">
+                    <span class="badge">Big Data</span>
+                    <span class="badge">Data Analytics</span>
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Operations Research</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#projects" class="nav-item active">Projects</a>
+                <a href="#publication" class="nav-item">Publications</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
-        <header class="hero">
-            <h1>Hello, I'm <span>Restu Nugroho</span></h1>
-            <p class="subtitle">
-                A Data Scientist passionate about turning data into actionable insights and measurable business value. 
-                Hands-on experience in data analytics, forecasting, machine learning, and operations optimization, 
-                with a proven record of building scalable data pipelines, predictive models, and deploying end-to-end ML solutions. 
-                I have helped companies in industries such as Renewable Energy, Supply Chain, and Transportation unlock greater value through data-driven strategies.
-            </p>
-            <div class="highlight">Big Data | Data Analytics | Machine Learning</div>
-        </header>
+        <!-- Projects Overview Section -->
+        <section class="section" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Project Portfolio</h2>
+                <p class="section-subtitle">Comprehensive solutions in data science and machine learning</p>
+            </div>
 
-        <!-- PROJECT OUTLINE SECTION -->
-        <div class="outline-section">
-            <h2>🚀 Project Portfolio</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-category">Data Analytics and Predictive Model</div>
-                    <a href="#project1" class="project-title">Taxi Driver Placement Recommendation System</a>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">BigQuery</span>
-                        <span class="tech-badge">QGIS</span>
-                        <span class="tech-badge">DBSCAN</span>
-                        <span class="tech-badge">CatBoost</span>
-                        <span class="tech-badge">Kubeflow</span>
-                        <span class="tech-badge">MILP</span>
+            <div class="cards-grid">
+                <!-- Project 1 -->
+                <div class="card">
+                    <div class="card-category">Data Analytics & Predictive Model</div>
+                    <a href="#project1" class="card-title">Taxi Driver Placement Recommendation System</a>
+                    <p class="card-description">
+                        Designed a system that recommends optimal standby locations for taxi drivers based on predicted passenger demand and existing taxi supply to improve efficiency and earnings.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">BigQuery</span>
+                        <span class="tech-tag">QGIS</span>
+                        <span class="tech-tag">DBSCAN</span>
+                        <span class="tech-tag">CatBoost</span>
+                        <span class="tech-tag">Kubeflow</span>
+                        <span class="tech-tag">MILP</span>
+                    </div>
+                    <div class="card-metrics">
+                        <div class="metric">
+                            <span class="metric-value">70-77%</span>
+                            <span class="metric-label">Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">88%</span>
+                            <span class="metric-label">Taxi Stand Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">70-75%</span>
+                            <span class="metric-label">Success Rate</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-category">Data Analytics and Predictive Model</div>
-                    <a href="#project2" class="project-title">Fair Fixed Pricing Prediction Model</a>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">BigQuery</span>
-                        <span class="tech-badge">CatBoost</span>
-                        <span class="tech-badge">FastAPI</span>
-                        <span class="tech-badge">BI Tools</span>
+                <!-- Project 2 -->
+                <div class="card">
+                    <div class="card-category">Data Analytics & Predictive Model</div>
+                    <a href="#project2" class="card-title">Fair Fixed Pricing Prediction Model</a>
+                    <p class="card-description">
+                        Developed a model to predict a fair Fixed Price that closely aligns with the expected Argo fare, ensuring customer satisfaction while maintaining driver trust and fairness.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">BigQuery</span>
+                        <span class="tech-tag">CatBoost</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">BI Tools</span>
+                    </div>
+                    <div class="card-metrics">
+                        <div class="metric">
+                            <span class="metric-value">79-82%</span>
+                            <span class="metric-label">Prediction Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">60% → 82%</span>
+                            <span class="metric-label">Improvement</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-category">IoT Analytics</div>
-                    <a href="#project3" class="project-title">Waiting Time Prediction for Taxi Stands</a>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">BigQuery</span>
-                        <span class="tech-badge">IoT Data</span>
-                        <span class="tech-badge">scikit-learn</span>
-                        <span class="tech-badge">CatBoost</span>
-                        <span class="tech-badge">Kubeflow</span>
+                <!-- Project 3 -->
+                <div class="card">
+                    <div class="card-category">IoT Analytics</div>
+                    <a href="#project3" class="card-title">Waiting Time Prediction for Taxi Stands</a>
+                    <p class="card-description">
+                        Predict the waiting time for each pangkalan and provide min–max prediction intervals to help drivers make data-driven decisions about which taxi stands to enter.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">BigQuery</span>
+                        <span class="tech-tag">IoT Data</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">CatBoost</span>
+                        <span class="tech-tag">Kubeflow</span>
+                    </div>
+                    <div class="card-metrics">
+                        <div class="metric">
+                            <span class="metric-value">80%+</span>
+                            <span class="metric-label">Interval Coverage</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-category">Product Development</div>
-                    <a href="#project4" class="project-title">Analytics Platform for Specific Cases</a>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Time Series</span>
-                        <span class="tech-badge">Analytics</span>
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">FastAPi</span>
+                <!-- Project 4 -->
+                <div class="card">
+                    <div class="card-category">Product Development</div>
+                    <a href="#project4" class="card-title">Analytics Platform for Time Series Analysis</a>
+                    <p class="card-description">
+                        Built an analytics platform that enables users to perform data processing and analytics for specific cases, with specialized focus on time series analysis.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">Analytics</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">FastAPI</span>
                     </div>
                 </div>
             </div>
 
-            <div class="publication-section">
-                <div class="publication-title">
-                    <a href="https://ieeexplore.ieee.org/document/10825750" 
-                       target="_blank" 
-                       style="text-decoration: none; color: inherit;">
-                        📄 IEEE Big Data 2024 Publication
-                    </a>
-                </div>
-                <div class="publication-venue">IEEE Big Data Conference 2024 - Poster Category</div>
-                
-                <!-- Publication Screenshot -->
-                <div style="margin: 20px 0; text-align: center;">
-                    <img src="images/ieee-publication.png" 
-                         alt="IEEE Big Data 2024 Publication" 
-                         style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 1px solid #ddd;">
-                </div>
-                
-                <p><strong>First Author</strong> | Research paper accepted at one of the premier Big Data conferences. Presented research findings in Washington DC, USA.</p>
-                <div class="project-links" style="margin-top: 15px;">
-                    <a href="https://ieeexplore.ieee.org/document/10825750" class="btn btn-success">View Publication</a>
-                    <a href="#publication-detail" class="btn btn-primary">More Details</a>
+            <!-- Publication Card -->
+            <div class="card publication-card" id="publication">
+                <div class="card-category">IEEE Big Data 2024 Publication</div>
+                <a href="https://ieeexplore.ieee.org/document/10825750" class="card-title" target="_blank">
+                    Research Publication - First Author
+                </a>
+                <p class="card-description">
+                    <strong>First Author</strong> | Research paper accepted at one of the premier Big Data conferences. 
+                    Presented research findings in Washington DC, USA.
+                </p>
+                <div style="margin: 16px 0;">
+                    <a href="https://ieeexplore.ieee.org/document/10825750" class="btn btn-primary" target="_blank">View Publication</a>
+                    <a href="#publication-detail" class="btn btn-secondary">More Details</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- PROJECT DETAILS SECTION -->
-        <div class="details-section">
-            <h2 style="text-align: center; margin-bottom: 50px; color: #1e3c72; font-size: 2.5rem;">📋 Detailed Projects</h2>
+        <!-- Detailed Projects Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Detailed Project Information</h2>
+                <p class="section-subtitle">In-depth analysis and technical implementation details</p>
+            </div>
 
+            <!-- Project 1 Detail -->
             <div class="project-detail" id="project1">
-                <h3>1. Placement Recommendation for Taxi Drivers in Indonesia</h3>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">🎯 Industry Impact</span>
-                        <span class="meta-value">Transportation Intelligence</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">📊 Scale</span>
-                        <span class="meta-value">100k+ Customers, 10k+ Drivers</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">🛠️ Tech Focus</span>
-                        <span class="meta-value">ML + Optimization</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">💼 Impact</span>
-                        <span class="meta-value">Increasing Order Completion Rate and Driver Revenue</span>
-                    </div>
+                <div class="project-detail-header">
+                    <h3 class="project-detail-title">1. Placement Recommendation for Taxi Drivers in Indonesia</h3>
                 </div>
-
-                <div class="section-title">🎯 Problem</div>
-                <p>A major taxi company in Indonesia with hundreds of thousands customers and ten of thousands drivers faced a significant challenge during demand surges, such as heavy rain or major public events. During these periods, the order completion rate dropped sharply, causing customers to wait longer due to the unavailability of taxis. This led to a decline in customer trust. On the other side, many drivers were roaming without passengers, wasting both fuel and time. Drivers needed guidance on where to position themselves during idle periods to improve efficiency and earnings.</p>
-
-                <div class="section-title">🎯 Objective</div>
-                <p>Design a system that recommends optimal standby locations for taxi drivers—based on predicted passenger demand and existing taxi supply—so they can position themselves strategically when vacant.</p>
-
-                <div class="section-title">🚀 My Contribution</div>
-                <ul class="feature-list">
-                    <li>Mapped and clustered pickup hotspots using historical transaction data, grouping them by their location density. These clusters represented the most promising demand locations.</li>
-                    <li>Developed a demand forecasting model for each cluster by time of day and day of week to predict future passenger needs, enabling dynamic recommendations for high-probability pickup spots.</li>
-                    <li>Integrated the forecasts into an optimization system that matches potential standby locations for each driver based on the demand–supply balance.</li>
-                </ul>
-
-                <div class="section-title">🛠️ Tech Stack</div>
-                <p>Python and BigQuery for data processing and feature creation; QGIS for spatial data visualization and analysis; DBSCAN for location clustering; CatBoost for prediction models; Kubeflow for batch prediction; Looker Studio for accuracy monitoring; CDC (Change Data Capture) for streamlined backend data flow; MILP (Mixed Integer Linear Programming) for taxi allocation optimization.</p>
-
-                <div class="section-title">📈 Results & Impact</div>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <span class="result-number">70-77%</span>
-                        <div class="result-text">Overall Prediction Accuracy (R²)</div>
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <h4 class="detail-title">Problem Statement</h4>
+                        <p>A major taxi company in Indonesia faced significant challenges during demand surges, such as heavy rain or major public events. During these periods, the order completion rate dropped sharply, causing customers to wait longer due to the unavailability of taxis. This led to a decline in customer trust while many drivers were roaming without passengers, wasting both fuel and time.</p>
                     </div>
-                    <div class="result-card">
-                        <span class="result-number">88%</span>
-                        <div class="result-text">Taxi Stand Areas Accuracy (R²)</div>
-                    </div>
-                    <div class="result-card">
-                        <span class="result-number">70-75%</span>
-                        <div class="result-text">Driver Success Rate Following Recommendations (based on pilot project)</div>
-                    </div>
-                </div>
 
-                <div class="project-links" style="margin-top: 30px;">
-                    <a href="#" class="btn btn-primary">Technical Documentation</a>
-                    <a href="#" class="btn btn-secondary">Live Dashboard</a>
-                    <a href="#" class="btn btn-secondary">Research Paper</a>
+                    <div class="detail-section">
+                        <h4 class="detail-title">Solution & Approach</h4>
+                        <ul class="detail-list">
+                            <li>Mapped and clustered pickup hotspots using historical transaction data, grouping them by their location density</li>
+                            <li>Developed a demand forecasting model for each cluster by time of day and day of week to predict future passenger needs</li>
+                            <li>Integrated the forecasts into an optimization system that matches potential standby locations for each driver</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Technology Stack</h4>
+                        <p>Python and BigQuery for data processing; QGIS for spatial analysis; DBSCAN for clustering; CatBoost for prediction; Kubeflow for batch prediction; MILP for optimization</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Results & Impact</h4>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-value">70-77%</span>
+                                <span class="result-label">Overall Prediction Accuracy (R²)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">88%</span>
+                                <span class="result-label">Taxi Stand Areas Accuracy (R²)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">70-75%</span>
+                                <span class="result-label">Driver Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 2 Detail -->
             <div class="project-detail" id="project2">
-                <h3>2. Predictive Modeling for Fair Fixed Pricing in Taxi Services</h3>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">🎯 Business Challenge</span>
-                        <span class="meta-value">Pricing Optimization</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">📊 Model Performance</span>
-                        <span class="meta-value">79-82% Accuracy</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">🛠️ Deployment</span>
-                        <span class="meta-value">FastAPI Production</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">💼 Impact</span>
-                        <span class="meta-value">Driver Satisfaction</span>
-                    </div>
+                <div class="project-detail-header">
+                    <h3 class="project-detail-title">2. Predictive Modeling for Fair Fixed Pricing in Taxi Services</h3>
                 </div>
-
-                <div class="section-title">🎯 Problem</div>
-                <p>A leading taxi company in Indonesia with hundreds of thousands customers launched a Fixed Price feature—a static fare displayed upfront to passengers, besides the traditional meter-based pricing (Argo). While this increased customer trust and transparency, it created friction with drivers. During heavy traffic, the Fixed Price was often lower than the actual Argo fare, leading to dissatisfaction as drivers experienced longer travel times with lower returns.</p>
-
-                <div class="section-title">🎯 Objective</div>
-                <p>Develop a model to predict a fair Fixed Price that closely aligns with the expected Argo fare—ensuring customer satisfaction while maintaining driver trust and fairness.</p>
-
-                <div class="section-title">🚀 My Contribution</div>
-                <ul class="feature-list">
-                    <li>Conducted exploratory data analysis on internal database logs, including historical trip details, traffic conditions, route patterns, and travel durations.</li>
-                    <li>Developed a machine learning model to predict Argo-equivalent fares based on trip parameters, which served as the foundation for calculating a more balanced Fixed Price.</li>
-                    <li>Improved model performance through feature engineering (e.g., time of day, pickup–drop-off location pairs, route variations) and model calibration.</li>
-                </ul>
-
-                <div class="section-title">🛠️ Tech Stack</div>
-                <p>Python and BigQuery for data processing, cleaning, analysis, and visualization; CatBoost for machine learning modeling; BI tools for accuracy monitoring and visualization; FastAPI for model deployment via API.</p>
-
-                <div class="section-title">📈 Results & Business Impact</div>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <span class="result-number">79-82%</span>
-                        <div class="result-text">Prediction Accuracy (±10% of actual fare)</div>
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <h4 class="detail-title">🎯 Problem Statement</h4>
+                        <p>A leading taxi company launched a Fixed Price feature to increase customer trust and transparency. However, during heavy traffic, the Fixed Price was often lower than the actual Argo fare, leading to driver dissatisfaction as they experienced longer travel times with lower returns.</p>
                     </div>
-                    <div class="result-card">
-                        <span class="result-number">60% → 82%</span>
-                        <div class="result-text">Accuracy Improvement</div>
-                    </div>
-                    <div class="result-card">
-                        <span class="result-number">Reduced</span>
-                        <div class="result-text">Driver Complaints</div>
-                    </div>
-                    <div class="result-card">
-                        <span class="result-number">Increased</span>
-                        <div class="result-text">Feature Adoption Rate</div>
-                    </div>
-                </div>
 
-                <div class="project-links" style="margin-top: 30px;">
-                    <a href="#" class="btn btn-primary">API Documentation</a>
-                    <a href="#" class="btn btn-secondary">Model Performance Report</a>
-                    <a href="#" class="btn btn-secondary">Business Impact Analysis</a>
+                    <div class="detail-section">
+                        <h4 class="detail-title">🚀 Solution & Approach</h4>
+                        <ul class="detail-list">
+                            <li>Conducted exploratory data analysis on internal database logs, including historical trip details and traffic conditions</li>
+                            <li>Developed a machine learning model to predict Argo-equivalent fares based on trip parameters</li>
+                            <li>Improved model performance through feature engineering and model calibration</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Results & Business Impact</h4>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-value">79-82%</span>
+                                <span class="result-label">Prediction Accuracy</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">60% → 82%</span>
+                                <span class="result-label">Accuracy Improvement</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">Reduced</span>
+                                <span class="result-label">Driver Complaints</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">Increased</span>
+                                <span class="result-label">Feature Adoption</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 3 Detail -->
             <div class="project-detail" id="project3">
-                <h3>3. Waiting Time Prediction for Taxi Drivers in Pangkalan</h3>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">🎯 Focus Area</span>
-                        <span class="meta-value">IoT Analytics, Predictive Modeling</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">📊 Performance</span>
-                        <span class="meta-value">80%+ Interval Coverage</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">🛠️ Architecture</span>
-                        <span class="meta-value">Batch ML Pipeline</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">💼 Application</span>
-                        <span class="meta-value">Driver Mobile App</span>
-                    </div>
+                <div class="project-detail-header">
+                    <h3 class="project-detail-title">3. Waiting Time Prediction for Taxi Drivers in Pangkalan</h3>
                 </div>
-
-                <div class="section-title">🎯 Problem</div>
-                <p>Pangkalan (taxi stands / waiting areas like in airports, malls, stations, hotels) have highly variable demand and supply. Some pangkalan suffer long passenger-arrival intervals while others have idle drivers waiting too long. Drivers lack a reliable, real-time way to decide which pangkalan to enter when they are vacant, causing wasted time, fuel, and lower earnings—and suboptimal customer service.</p>
-
-                <div class="section-title">🎯 Objective</div>
-                <p>Predict the waiting time for each pangkalan (from the moment a driver enters until they get a passenger) and provide a min–max prediction interval. These predictions are then used to recommend to drivers which pangkalan to enter—prioritizing those with the shortest expected waiting times. This helps drivers make data-driven decisions, improving match rates, reducing idle time, and increasing earnings.</p>
-
-                <div class="section-title">🚀 My Contribution</div>
-                <ul class="feature-list">
-                    <li>Calculated taxi waiting times by collecting and engineering IoT data at scale, leveraging BigQuery for processing</li>
-                    <li>Designed waiting-time target and training dataset: Defined target as elapsed minutes between driver entry into pangkalan and next accepted pickup (with excluding for outlier data). Created features such as predicted demand, current number of taxi, and time series of the waiting time.</li>
-                    <li>Developed prediction model that outputs waiting time and the interval min-max prediction.</li>
-                    <li>Deployed end-to-end pipeline: Automated feature computation and prediction in Kubeflow, Integrated with driver app, Implemented monitoring dashboards for interval coverage, and prediction accuracy</li>
-                </ul>
-
-                <div class="section-title">🛠️ Tech Stack</div>
-                <p>Data processing: Python and BigQuery; Modeling & experimentation: Python, pandas, scikit-learn, CatBoost; Orchestration & serving: Kubeflow; Monitoring & visualization: Looker Studio</p>
-
-                <div class="section-title">📈 Results & Impact</div>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <span class="result-number">80%+</span>
-                        <div class="result-text">Interval Coverage for Major Pangkalans</div>
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <h4 class="detail-title">🎯 Problem Statement</h4>
+                        <p>Pangkalan (taxi stands) have highly variable demand and supply. Some pangkalan suffer long passenger-arrival intervals while others have idle drivers waiting too long. Drivers lack a reliable, real-time way to decide which pangkalan to enter when they are vacant.</p>
                     </div>
-                    <div class="result-card">
-                        <span class="result-number">Batch</span>
-                        <div class="result-text">Prediction System Pipeline</div>
-                    </div>
-                </div>
 
-                <div class="project-links" style="margin-top: 30px;">
-                    <a href="#" class="btn btn-primary">Technical Documentation</a>
-                    <a href="#" class="btn btn-secondary">Monitoring Dashboard</a>
-                    <a href="#" class="btn btn-secondary">Mobile App Integration</a>
+                    <div class="detail-section">
+                        <h4 class="detail-title">🚀 Solution & Approach</h4>
+                        <ul class="detail-list">
+                            <li>Calculated taxi waiting times by collecting and engineering IoT data at scale</li>
+                            <li>Designed waiting-time target and training dataset with features such as predicted demand and current taxi count</li>
+                            <li>Developed prediction model that outputs waiting time and interval min-max prediction</li>
+                            <li>Deployed end-to-end pipeline with automated feature computation and monitoring dashboards</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">📈 Results & Impact</h4>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <span class="result-value">80%+</span>
+                                <span class="result-label">Interval Coverage for Major Pangkalans</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">Batch</span>
+                                <span class="result-label">Prediction System Pipeline</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-detail" id="project4">
-                <h3>4. Digital Analytics Platform for Time Series Analysis</h3>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">🎯 Product Type</span>
-                        <span class="meta-value">Analytics Platform</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">📊 Focus</span>
-                        <span class="meta-value">Powerful and Easy Data Preprocessing, and Analytics</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">📊 use Cases</span>
-                        <span class="meta-value">Time Series Analytics, Customer Analysis, and more</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">🛠️ Development</span>
-                        <span class="meta-value">Full Stack Solution</span>
-                    </div>
-                </div>
-
-                <div class="section-title">🎯 Project Overview</div>
-                <p>I build an analytics platform that enable user perform data processing and analytics for specific cases. First case is Time Series analysis.</p>
-
-                <div class="section-title">🚀 Key Features</div>
-                <ul class="feature-list">
-                    <li>Analytics platform for data processing and analytics</li>
-                    <li>Specialized in specific analytics capabilities</li>
-                    <li>User-friendly interface for complex analytical workflows</li>
-                    <li>Scalable architecture for handling various data types and preprocess</li>
-                </ul>
-
-                <div class="project-links" style="margin-top: 30px;">
-                    <a href="#" class="btn btn-primary">Live Demo</a>
-                    <a href="#" class="btn btn-secondary">Documentation</a>
-                    <a href="#" class="btn btn-secondary">GitHub Repository</a>
-                </div>
-            </div>
-
+            <!-- Publication Detail -->
             <div class="project-detail" id="publication-detail">
-                <h3>📄 IEEE Big Data 2024 Publication</h3>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">🏆 Conference</span>
-                        <span class="meta-value">IEEE Big Data 2024</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">📍 Location</span>
-                        <span class="meta-value">Washington DC, USA</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">👨‍💼 Role</span>
-                        <span class="meta-value">First Author</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">🎯 Category</span>
-                        <span class="meta-value">Poster Presentation</span>
-                    </div>
+                <div class="project-detail-header">
+                    <h3 class="project-detail-title">IEEE Big Data 2024 Publication</h3>
                 </div>
-
-                <div class="section-title">🏆 Publication Significance</div>
-                <p>Our team's research paper was accepted at IEEE Big Data 2024, one of the premier research communities for Big Data with highly competitive selection process. This publication showcases the intellectual properties and innovative research conducted at BlueBird.</p>
-
-                <div class="section-title">🚀 My Contributions</div>
-                <ul class="feature-list">
-                    <li><strong>First Author:</strong> Led the research design, methodology development, and paper writing</li>
-                    <li><strong>Data Analysis:</strong> Conducted comprehensive data analysis and visualization for the research findings</li>
-                    <li><strong>Research Innovation:</strong> Developed novel approaches to taxi placement optimization using machine learning</li>
-                    <li><strong>Technical Implementation:</strong> Built and validated the predictive models presented in the paper</li>
-                    <li><strong>Results Presentation:</strong> Created compelling visualizations and statistical analysis for the publication</li>
-                </ul>
-
-                <div class="section-title">📸 Conference Highlights</div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 25px 0;">
-                    <div style="text-align: center;">
-                        <img src="images/ieee-publication.png" alt="IEEE Publication Page" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Publication on IEEE Xplore</p>
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <h4 class="detail-title">Publication Significance</h4>
+                        <p>Our team's research paper was accepted at IEEE Big Data 2024, one of the premier research communities for Big Data with highly competitive selection process. This publication showcases the intellectual properties and innovative research conducted at BlueBird.</p>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="images/conference-photo.jpg" alt="Conference Presentation" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Presenting in Washington DC</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <img src="images/poster-presentation.jpg" alt="Poster Session" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Poster Session</p>
-                    </div>
-                </div>
-                <ul class="feature-list">
-                    <li><strong>International Recognition:</strong> Research presented at premier global Big Data conference</li>
-                    <li><strong>Industry Relevance:</strong> Real-world application of ML in transportation industry</li>
-                    <li><strong>Knowledge Sharing:</strong> Contributed to academic and industry knowledge base</li>
-                    <li><strong>Team Representation:</strong> Two team members attended conference in Washington DC</li>
-                </ul>
 
-                <div class="project-links" style="margin-top: 30px;">
-                    <a href="https://ieeexplore.ieee.org/document/10825750" 
-                       class="btn btn-success" target="_blank">
-                        View Publication
-                    </a>
+                    <div class="detail-section">
+                        <h4 class="detail-title">My Contributions</h4>
+                        <ul class="detail-list">
+                            <li><strong>First Author:</strong> Led the research design, methodology development, and paper writing</li>
+                            <li><strong>Data Analysis:</strong> Conducted comprehensive data analysis and visualization for the research findings</li>
+                            <li><strong>Research Innovation:</strong> Developed novel approaches to taxi placement optimization using machine learning</li>
+                            <li><strong>Technical Implementation:</strong> Built and validated the predictive models presented in the paper</li>
+                            <li><strong>International Recognition:</strong> Research presented at premier global Big Data conference</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 24px;">
+                        <a href="https://ieeexplore.ieee.org/document/10825750" class="btn btn-primary" target="_blank">View Publication</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- SKILLS SECTION -->
-        <div class="skills-section">
-            <h2 style="text-align: center; margin-bottom: 40px; color: #1e3c72; font-size: 2.5rem;">🛠️ Technical Skills & Expertise</h2>
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills & Expertise</h2>
+                <p class="section-subtitle">Comprehensive technical capabilities across data science and machine learning</p>
+            </div>
+
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>🐍 Programming & Data Science</h4>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">pandas</span>
-                        <span class="skill-badge">NumPy</span>
-                        <span class="skill-badge">scikit-learn</span>
-                        <span class="skill-badge">Jupyter</span>
+                <div class="skill-card">
+                    <h4 class="skill-title">Programming & Data Science</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">Jupyter</span>
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h4>🤖 Machine Learning & AI</h4>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Time Series Forecasting</span>
-                        <span class="skill-badge">Feature Engineering</span>
-                        <span class="skill-badge">Model Optimization</span>
-                        <span class="skill-badge">Predictive Analytics</span>
+                <div class="skill-card">
+                    <h4 class="skill-title">Machine Learning & AI</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Time Series Forecasting</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">Model Optimization</span>
+                        <span class="skill-tag">Predictive Analytics</span>
+                        <span class="skill-tag">CatBoost</span>
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h4>☁️ Big Data & Cloud</h4>
-                    <div class="skill-badges">
-                        <span class="skill-badge">BigQuery</span>
-                        <span class="skill-badge">Kubeflow</span>
-                        <span class="skill-badge">Data Pipeline</span>
-                        <span class="skill-badge">ETL/ELT</span>
+                <div class="skill-card">
+                    <h4 class="skill-title">Big Data & Cloud</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Kubeflow</span>
+                        <span class="skill-tag">Data Pipeline</span>
+                        <span class="skill-tag">ETL/ELT</span>
+                        <span class="skill-tag">CDC</span>
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h4>🗺️ Geospatial & Visualization</h4>
-                    <div class="skill-badges">
-                        <span class="skill-badge">QGIS</span>
-                        <span class="skill-badge">DBSCAN Clustering</span>
-                        <span class="skill-badge">Spatial Analysis</span>
-                        <span class="skill-badge">Looker Studio</span>
-                        <span class="skill-badge">BI Tools</span>
+                <div class="skill-card">
+                    <h4 class="skill-title">Geospatial & Visualization</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">QGIS</span>
+                        <span class="skill-tag">DBSCAN Clustering</span>
+                        <span class="skill-tag">Spatial Analysis</span>
+                        <span class="skill-tag">Looker Studio</span>
+                        <span class="skill-tag">BI Tools</span>
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h4>⚙️ Optimization & MLOps</h4>
-                    <div class="skill-badges">
-                        <span class="skill-badge">MILP</span>
-                        <span class="skill-badge">Optimization Algorithms</span>
-                        <span class="skill-badge">Model Deployment</span>
-                        <span class="skill-badge">FastAPI</span>
+                <div class="skill-card">
+                    <h4 class="skill-title">Optimization & MLOps</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MILP</span>
+                        <span class="skill-tag">Optimization Algorithms</span>
+                        <span class="skill-tag">Model Deployment</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">API Development</span>
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h4>📊 Specialized Domains</h4>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Transportation Analytics</span>
-                        <span class="skill-badge">Demand Forecasting</span>
-                        <span class="skill-badge">IoT Data Processing</span>
-                        <span class="skill-badge">Operations Research</span>
+                <div class="skill-card">
+                    <h4 class="skill-title">Specialized Domains</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Transportation Analytics</span>
+                        <span class="skill-tag">Demand Forecasting</span>
+                        <span class="skill-tag">IoT Data Processing</span>
+                        <span class="skill-tag">Operations Research</span>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <footer>
-            <h3>📞 Let's Connect</h3>
-            <div class="contact-info">
-                <a href="mailto:restuv13@gmail.com" class="contact-item">📧 Email</a>
-                <a href="https://www.linkedin.com/in/restu-nugroho-11221270/" class="contact-item">💼 LinkedIn</a>
-                <a href="https://github.com/restunugroho/" class="contact-item">🐙 GitHub</a>
-            </div>
-        </footer>
+        </section>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title">Let's Connect</h3>
+                <div class="contact-links">
+                    <a href="mailto:restuv13@gmail.com" class="contact-link">Email</a>
+                    <a href="https://www.linkedin.com/in/restu-nugroho-11221270/" class="contact-link" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/restunugroho/" class="contact-link" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Smooth scrolling for internal links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = target.offsetTop - 80; // Account for sticky nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Scroll progress indicator
+        // Active navigation highlighting
         window.addEventListener('scroll', function() {
-            const scrolled = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            document.getElementById('scrollProgress').style.width = scrolled + '%';
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
         });
 
-        // Add loading animation for project cards
+        // Card hover effects
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1028,27 +973,36 @@
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.animationPlayState = 'running';
                 }
             });
         }, observerOptions);
 
-        // Apply animation to project cards
-        document.querySelectorAll('.project-card, .project-detail').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        // Observe all animated elements
+        document.querySelectorAll('.card, .project-detail').forEach(element => {
+            element.style.animationPlayState = 'paused';
+            observer.observe(element);
         });
 
-        // Add click analytics (optional - for tracking)
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                console.log('Button clicked:', this.textContent, this.href);
-                // Add analytics tracking here if needed
+        // Add click tracking for analytics
+        document.querySelectorAll('.btn, .card-title').forEach(element => {
+            element.addEventListener('click', function() {
+                console.log('Clicked:', this.textContent.trim(), this.href);
             });
         });
+
+        // Enhanced mobile navigation
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // Close mobile menu if exists
+                    const nav = document.querySelector('.nav-content');
+                    if (nav.classList.contains('mobile-open')) {
+                        nav.classList.remove('mobile-open');
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
